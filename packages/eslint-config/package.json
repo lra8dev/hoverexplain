@@ -1,0 +1,14 @@
+{
+  "name": "@hoverdocs/eslint-config",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.7.3",
+    "eslint-plugin-format": "^1.2.0"
+  },
+  "peerDependencies": {
+    "eslint": "catalog:tooling"
+  }
+}
