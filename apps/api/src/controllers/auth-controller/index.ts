@@ -26,7 +26,7 @@ export class AuthController {
 
     const auth = getAuth(req);
     if (auth.userId && auth.sessionId) {
-      res.redirect("/auth/callback");
+      res.redirect("/api/auth/callback");
       return;
     }
 
@@ -45,7 +45,7 @@ export class AuthController {
       const auth = getAuth(req);
 
       if (!auth.userId || !auth.sessionId) {
-        res.redirect(`/auth/login?redirect_uri=${encodeURIComponent(redirectUri)}`);
+        res.redirect(`/api/auth/login?redirect_uri=${encodeURIComponent(redirectUri)}`);
         return;
       }
 
@@ -95,14 +95,15 @@ export class AuthController {
       padding: 1rem;
     }
     .container {
-      text-align: center;
       width: 100%;
       max-width: 440px;
     }
-    .header { margin-bottom: 1.5rem; }
-    .header h1 { margin: 0 0 0.5rem; font-size: 1.5rem; }
-    .header p { color: #a1a1aa; margin: 0; font-size: 0.875rem; }
-    #clerk-auth { min-height: 400px; }
+    #clerk-auth { 
+      min-height: 400px; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .loading {
       display: flex;
       flex-direction: column;
@@ -124,11 +125,7 @@ export class AuthController {
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>HoverDocs AI</h1>
-      <p>Sign in to enable AI features in VS Code</p>
-    </div>
-    <div id="clerk-auth">
+   <div id="clerk-auth">
       <div class="loading">
         <div class="spinner"></div>
         <span>Loading...</span>
@@ -156,23 +153,14 @@ export class AuthController {
         if (window.Clerk.user) {
           document.getElementById('clerk-auth').innerHTML = 
             '<div class="loading"><div class="spinner"></div><span>Redirecting...</span></div>';
-          window.location.href = '/auth/callback';
+          window.location.href = '/api/auth/callback';
           return;
         }
 
         document.getElementById('clerk-auth').innerHTML = '';
         window.Clerk.mountSignIn(document.getElementById('clerk-auth'), {
-          appearance: {
-            variables: {
-              colorBackground: '#18181b',
-              colorText: '#f4f4f5',
-              colorPrimary: '#2563eb',
-              colorInputBackground: '#27272a',
-              colorInputText: '#f4f4f5',
-            },
-          },
-          signInFallbackRedirectUrl: '/auth/callback',
-          signUpFallbackRedirectUrl: '/auth/callback',
+          signInFallbackRedirectUrl: '/api/auth/callback',
+          signUpFallbackRedirectUrl: '/api/auth/callback',
         });
       } catch (err) {
         showError('Authentication service error: ' + (err.message || 'Unknown error'));
@@ -271,7 +259,7 @@ export class AuthController {
     crossorigin="anonymous"
     data-clerk-publishable-key="${config.CLERK_PUBLISHABLE_KEY}"
     src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
-    onload="window.Clerk.load().then(() => window.Clerk.signOut())"
+    onload="window.Clerk.load().then(() => window.Clerk.signOut({ redirectUrl: window.location.href }))"
   ></script>
 </body>
 </html>`;
