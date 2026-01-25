@@ -36,8 +36,10 @@ export class ApiService {
       });
 
       if (!response.ok) {
-        console.error("API Error:", response.statusText);
-        showToast(response.statusText, { isError: true });
+        const errorBody = await response.json().catch(() => null) as { message?: string } | null;
+        const errorMessage = errorBody?.message || response.statusText;
+        console.error("API Error:", errorMessage);
+        showToast(errorMessage, { isError: true });
         return null;
       }
 
