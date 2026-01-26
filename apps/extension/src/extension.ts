@@ -23,8 +23,8 @@ export function activate(context: ExtensionContext) {
     hoverProvider.isEnabled = !hoverProvider.isEnabled;
     updateStatusBar(hoverProvider.isEnabled, statusBarItem);
   });
-  const signInCommand = commands.registerCommand("hoverdocs.signin", authManager.signIn);
-  const signOutCommand = commands.registerCommand("hoverdocs.signout", authManager.signOut);
+  const signInCommand = commands.registerCommand("hoverdocs.signin", () => authManager.signIn());
+  const signOutCommand = commands.registerCommand("hoverdocs.signout", () => authManager.signOut());
 
   context.subscriptions.push(
     statusBarItem,
