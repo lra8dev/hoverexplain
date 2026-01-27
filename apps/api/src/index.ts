@@ -40,8 +40,16 @@ class HoverDocsApp {
     );
 
     const corsOptions: CorsOptions = {
-      // WIP: vscode-webview://* after publishing the extension
-
+      origin: (origin, callback) => {
+        if (!origin) {
+          return callback(null, true);
+        }
+        if (config.SERVER_API_URL === origin) {
+          return callback(null, true);
+        }
+        callback(new Error("Not allowed by CORS"));
+      },
+      credentials: true,
     };
 
     this.app.use(cors(corsOptions));
