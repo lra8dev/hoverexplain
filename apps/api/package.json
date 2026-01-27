@@ -1,0 +1,46 @@
+{
+  "name": "@hoverdocs/api",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node ./dist/index.js",
+    "check:types": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@clerk/express": "catalog:infra",
+    "@google/genai": "catalog:ai",
+    "@hoverdocs/utils": "workspace:*",
+    "@hoverdocs/validators": "workspace:*",
+    "@upstash/ratelimit": "catalog:infra",
+    "@upstash/redis": "catalog:infra",
+    "cookie-parser": "catalog:backend",
+    "cors": "catalog:backend",
+    "dotenv": "catalog:core",
+    "express": "catalog:backend",
+    "helmet": "catalog:backend",
+    "jsonwebtoken": "catalog:backend",
+    "morgan": "catalog:backend",
+    "pino": "catalog:backend",
+    "tsc-alias": "catalog:tooling",
+    "tsx": "catalog:tooling"
+  },
+  "devDependencies": {
+    "@hoverdocs/eslint-config": "workspace:*",
+    "@types/cookie-parser": "catalog:types",
+    "@types/cors": "catalog:types",
+    "@types/express": "catalog:types",
+    "@types/jsonwebtoken": "catalog:types",
+    "@types/morgan": "catalog:types",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:tooling",
+    "pino-pretty": "catalog:backend",
+    "typescript": "catalog:core"
+  }
+}
