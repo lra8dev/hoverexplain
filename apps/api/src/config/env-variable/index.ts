@@ -1,7 +1,7 @@
 import "dotenv/config";
-import type { EnvConfig } from "@hoverdocs/validators";
+import type { EnvConfig } from "@hoverlens/validators";
 
-import { envSchema } from "@hoverdocs/validators";
+import { envSchema } from "@hoverlens/validators";
 
 function validateEnv(): EnvConfig {
   // eslint-disable-next-line node/no-process-env -- Centralized env access point

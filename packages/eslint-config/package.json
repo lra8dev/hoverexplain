@@ -1,6 +1,6 @@
 {
-  "name": "@hoverdocs/eslint-config",
-  "version": "1.0.0",
+  "name": "@hoverlens/eslint-config",
+  "version": "1.1.0",
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

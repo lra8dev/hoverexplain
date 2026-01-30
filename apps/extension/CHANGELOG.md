@@ -1,8 +1,20 @@
-# Change Log
+# HoverLens Changelog
 
-All notable changes to the "hoverdocs-ai" extension will be documented in this file.
+## Version 1.1.0: January 30, 2026
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+### Added
+- New branding: HoverLens
+- Improved documentation and onboarding
+- Updated Marketplace description
+- New extension icon
+
+### Changed
+- Clearer privacy and security messaging
+- Improved hover explanation clarity
+
+### Fixed
+- Minor UX inconsistencies
+
 
 ## 1.0.0
 

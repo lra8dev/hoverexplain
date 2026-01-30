@@ -1,6 +1,6 @@
 {
-  "name": "@hoverdocs/utils",
-  "version": "1.0.0",
+  "name": "@hoverlens/utils",
+  "version": "1.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@hoverdocs/eslint-config": "workspace:*",
+    "@hoverlens/eslint-config": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:tooling"
   }

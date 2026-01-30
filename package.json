@@ -1,6 +1,6 @@
 {
-  "name": "@hoverdocs/root",
-  "version": "1.0.0",
+  "name": "@hoverlens/root",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "pnpm -r --parallel dev",
@@ -9,32 +9,32 @@
     "lint": "pnpm -r --parallel lint",
     "build": "pnpm -r build",
     "lint:fix": "pnpm -r --parallel lint:fix",
-    "clean": "pnpm -r exec rm -rf dist node_modules tsconfig.tsbuildinfo",
+    "clean": "pnpm -r exec rm -rf dist tsconfig.tsbuildinfo",
     "prepare": "husky"
   },
   "keywords": [
+    "hover",
+    "code-understanding",
     "ai",
     "documentation",
     "vscode-extension",
-    "gemini",
     "developer-tools"
   ],
   "author": {
-    "name": "Lucky",
+    "name": "Lucky R",
     "url": "https://github.com/lra8dev"
   },
   "engines": {
     "node": ">=20.0.0",
-    "pnpm": ">=9.0.0"
+    "pnpm": ">=10.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lra8dev/hoverdocs-ai"
+    "url": "https://github.com/lra8dev/hoverlens"
   },
-  "license": "MIT",
   "packageManager": "pnpm@10.28.1",
   "devDependencies": {
-    "@hoverdocs/eslint-config": "workspace:*",
+    "@hoverlens/eslint-config": "workspace:*",
     "typescript": "catalog:core",
     "husky": "catalog:tooling",
     "eslint": "catalog:tooling"

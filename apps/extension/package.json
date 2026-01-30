@@ -1,23 +1,22 @@
 {
   "publisher": "luckyra8od",
-  "name": "hoverdocs-ai",
-  "displayName": "HoverDocs AI",
-  "version": "1.0.0",
-  "packageManager": "pnpm@10.27.0",
-  "description": "Context-Aware AI Documentation for VS Code",
+  "name": "hoverlens",
+  "displayName": "HoverLens",
+  "version": "1.1.0",
+  "description": "Instant code understanding, right under your cursor.",
   "license": "MIT",
   "galleryBanner": {
     "color": "#09090b",
     "theme": "dark"
   },
-  "homepage": "https://github.com/lra8dev/hoverdocs-ai/blob/main/apps/extension/README.md",
+  "homepage": "https://github.com/lra8dev/hoverlens/blob/main/apps/extension/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lra8dev/hoverdocs-ai.git",
+    "url": "https://github.com/lra8dev/hoverlens.git",
     "directory": "apps/extension"
   },
   "bugs": {
-    "url": "https://github.com/lra8dev/hoverdocs-ai/issues"
+    "url": "https://github.com/lra8dev/hoverlens/issues"
   },
   "keywords": [
     "ai",
@@ -31,7 +30,8 @@
     "context-aware",
     "productivity",
     "summary",
-    "copilot",
+    "code-understanding",
+    "hover-tooltip",
     "assistant"
   ],
   "categories": [
@@ -42,35 +42,33 @@
   ],
   "main": "./dist/extension.js",
   "icon": "assets/icon.png",
+  "extensionKind": ["workspace"],
   "pricing": "Free",
   "engines": {
     "vscode": "^1.108.1"
   },
   "activationEvents": [
-    "onStartupFinished"
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:go",
+    "onLanguage:java",
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:csharp"
   ],
   "contributes": {
     "commands": [
-      {
-        "command": "hoverdocs.signin",
-        "title": "HoverDocs: Sign In"
-      },
-      {
-        "command": "hoverdocs.signout",
-        "title": "HoverDocs: Sign Out"
-      },
-      {
-        "command": "hoverdocs.toggle",
-        "title": "HoverDocs: Toggle On/Off"
-      }
+      { "command": "hoverlens.signin", "title": "HoverLens: Sign In" },
+      { "command": "hoverlens.signout", "title": "HoverLens: Sign Out" },
+      { "command": "hoverlens.toggle", "title": "HoverLens: Toggle On/Off" }
     ],
     "configuration": {
-      "title": "HoverDocs AI",
+      "title": "HoverLens",
       "properties": {
-        "hoverdocs.debounceTime": {
+        "hoverlens.debounceTime": {
           "type": "number",
           "default": 600,
-          "description": "Delay in milliseconds before triggering AI summary.",
+          "description": "Delay in milliseconds before triggering a hover explanation.",
           "minimum": 0,
           "maximum": 2000
         }
@@ -88,10 +86,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@hoverdocs/validators": "workspace:*"
+    "@hoverlens/validators": "workspace:*"
   },
   "devDependencies": {
-    "@hoverdocs/eslint-config": "workspace:*",
+    "@hoverlens/eslint-config": "workspace:*",
     "@types/node": "catalog:types",
     "@types/vscode": "^1.108.1",
     "esbuild": "catalog:tooling",

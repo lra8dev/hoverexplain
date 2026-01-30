@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 
-import { ZodError } from "@hoverdocs/validators";
+import { ZodError } from "@hoverlens/validators";
 
 import type { AppError } from "@/types";
 

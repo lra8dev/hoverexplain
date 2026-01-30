@@ -1,3 +1,3 @@
-import config from "@hoverdocs/eslint-config";
+import config from "@hoverlens/eslint-config";
 
 export default config;
