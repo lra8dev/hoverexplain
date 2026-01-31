@@ -4,7 +4,7 @@ import { config } from "../../config";
 import { showToast } from "../../utils/toast";
 
 export class AuthManager {
-  private static readonly SECRET_KEY = "hoverlens_auth_token";
+  private static readonly SECRET_KEY = "hoverexplain_auth_token";
   private context: vscode.ExtensionContext;
 
   constructor(context: vscode.ExtensionContext) {

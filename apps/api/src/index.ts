@@ -12,7 +12,7 @@ import { logger } from "@/lib/logger";
 import { errorHandler, isAuthenticated, rateLimiter } from "@/middlewares";
 import { authRouter, summaryRouter } from "@/routes";
 
-class HoverLensApp {
+class HoverExplainApp {
   private app: express.Application;
   private port: number;
 
@@ -60,7 +60,7 @@ class HoverLensApp {
 
   private setupRoutes(): void {
     this.app.get("/", (req, res) => {
-      res.status(200).json({ message: "HoverLens API is running" });
+      res.status(200).json({ message: "HoverExplain API is running" });
     });
 
     this.app.get("/health", (req, res) => {
@@ -88,18 +88,18 @@ class HoverLensApp {
   public start(): void {
     this.app.listen(this.port, (error) => {
       if (error) {
-        logger.error({ message: error.message }, "Error starting HoverLens API");
+        logger.error({ message: error.message }, "Error starting HoverExplain API");
         process.exit(1);
       }
 
-      logger.info(`HoverLens API is running on port ${this.port}`);
+      logger.info(`HoverExplain API is running on port ${this.port}`);
       logger.info(`Environment: ${config.NODE_ENV}`);
       logger.info(`Health check avaliable at ${config.SERVER_API_URL}/health`);
     });
   }
 }
 
-const server = new HoverLensApp();
+const server = new HoverExplainApp();
 server.start();
 
 process.on("SIGINT", () => process.exit());

@@ -94,7 +94,7 @@ importers:
 
   .:
     devDependencies:
-      '@hoverlens/eslint-config':
+      '@hoverexplain/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
       eslint:
@@ -115,10 +115,10 @@ importers:
       '@google/genai':
         specifier: catalog:ai
         version: 1.38.0
-      '@hoverlens/utils':
+      '@hoverexplain/utils':
         specifier: workspace:*
         version: link:../../packages/utils
-      '@hoverlens/validators':
+      '@hoverexplain/validators':
         specifier: workspace:*
         version: link:../../packages/validators
       '@upstash/ratelimit':
@@ -158,7 +158,7 @@ importers:
         specifier: catalog:tooling
         version: 4.21.0
     devDependencies:
-      '@hoverlens/eslint-config':
+      '@hoverexplain/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
       '@types/cookie-parser':
@@ -191,11 +191,11 @@ importers:
 
   apps/extension:
     dependencies:
-      '@hoverlens/validators':
+      '@hoverexplain/validators':
         specifier: workspace:*
         version: link:../../packages/validators
     devDependencies:
-      '@hoverlens/eslint-config':
+      '@hoverexplain/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
       '@types/node':
@@ -229,7 +229,7 @@ importers:
 
   packages/utils:
     devDependencies:
-      '@hoverlens/eslint-config':
+      '@hoverexplain/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
       '@types/node':
@@ -245,7 +245,7 @@ importers:
         specifier: catalog:core
         version: 4.3.6
     devDependencies:
-      '@hoverlens/eslint-config':
+      '@hoverexplain/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
       eslint:

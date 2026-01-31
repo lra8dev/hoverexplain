@@ -1,6 +1,6 @@
 {
-  "name": "@hoverlens/api",
-  "version": "1.1.0",
+  "name": "@hoverexplain/api",
+  "version": "1.2.0",
   "private": true,
   "license": "MIT",
   "main": "./dist/index.js",
@@ -16,8 +16,8 @@
   "dependencies": {
     "@clerk/express": "catalog:infra",
     "@google/genai": "catalog:ai",
-    "@hoverlens/utils": "workspace:*",
-    "@hoverlens/validators": "workspace:*",
+    "@hoverexplain/utils": "workspace:*",
+    "@hoverexplain/validators": "workspace:*",
     "@upstash/ratelimit": "catalog:infra",
     "@upstash/redis": "catalog:infra",
     "cookie-parser": "catalog:backend",
@@ -32,7 +32,7 @@
     "tsx": "catalog:tooling"
   },
   "devDependencies": {
-    "@hoverlens/eslint-config": "workspace:*",
+    "@hoverexplain/eslint-config": "workspace:*",
     "@types/cookie-parser": "catalog:types",
     "@types/cors": "catalog:types",
     "@types/express": "catalog:types",

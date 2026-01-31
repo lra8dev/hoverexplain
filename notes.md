@@ -47,14 +47,14 @@ private static reservedWord(word: string): string | undefined {
   TODO: Initially extension will be off
   TODO: fix rate limiter for cached summaries
   readme (extension):
-  # HoverLens
+  # HoverExplain
 
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/luckyra8od.hoverlens?style=flat-square&color=2563eb)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverlens)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/luckyra8od.hoverlens?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverlens)
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/luckyra8od.hoverexplain?style=flat-square&color=2563eb)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/luckyra8od.hoverexplain?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain)
 
 Context-Aware AI Code Summaries for VS Code
 
-**HoverLens** is your intelligent coding companion that explains complex logic instantly.
+**HoverExplain** is your intelligent coding companion that explains complex logic instantly.
 Powered by Google Gemini 1.5 Flash and Upstash Redis, it delivers lightning-fast, context-aware summaries of classes, functions, and variables directly inside your VS Code tooltip.
 
 ![Demo](https://my-raw-github-url/summary-demo-with-a-class-and-function.gif)
@@ -72,12 +72,12 @@ _(Replace this line with a GIF of the extension in action!)_
 
 ## 🚀 Usage
 
-1. **Install** the extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverlens).
+1. **Install** the extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain).
 2. Click the **"Sign In"** button in the notification (or run `HoverDocs: Sign In` from the Command Palette).
 3. **Authenticate** via your browser.
 4. **Hover** over any code block to see the magic! ✨
 
-![summary-demo](https://github.com/lra8dev/hoverlens/blob/main/extension/assets/hoverlens-toggle-on-get-summary.gif)
+![summary-demo](https://github.com/lra8dev/hoverexplain/blob/main/extension/assets/hoverexplain-toggle-on-get-summary.gif)
 
 ****
 
@@ -101,7 +101,7 @@ _(Replace this line with a GIF of the extension in action!)_
 
 ## ✊ Supported Languages
 
-HoverLens provides full context-aware code summaries for a growing set of popular programming languages:
+HoverExplain provides full context-aware code summaries for a growing set of popular programming languages:
 
 `TypeScript`, `JavaScript`, `Java`, `C++`, `C#`, and `C`, and `GoLang`
 
@@ -117,4 +117,11 @@ We take your code privacy seriously.
 
 ## 📄 License
 
-Distributed under the [MIT License](https://github.com/lra8dev/hoverlens/blob/main/LICENSE).
+Distributed under the [MIT License](https://github.com/lra8dev/hoverexplain/blob/main/LICENSE).
+
+
+
+
+
+new release (v1.2.0)
+ update name and improve documentation

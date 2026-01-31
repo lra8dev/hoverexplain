@@ -1,7 +1,7 @@
-import type { SummaryRequest, SummaryResponse } from "@hoverlens/validators";
+import type { SummaryRequest, SummaryResponse } from "@hoverexplain/validators";
 
-import { generateCodeHash } from "@hoverlens/utils";
-import { summaryRequestSchema } from "@hoverlens/validators";
+import { generateCodeHash } from "@hoverexplain/utils";
+import { summaryRequestSchema } from "@hoverexplain/validators";
 
 import type { ExpRequest, ExpResponse } from "@/types";
 

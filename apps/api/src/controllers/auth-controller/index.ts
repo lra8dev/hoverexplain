@@ -7,7 +7,7 @@ import { ApiError } from "@/lib/api-error";
 import { logger } from "@/lib/logger";
 import { JwtService } from "@/services/jwt-service";
 
-const REDIRECT_COOKIE = "hoverlens_redirect_uri";
+const REDIRECT_COOKIE = "hoverexplain_redirect_uri";
 
 export class AuthController {
   public static login(req: Request, res: Response): void {
@@ -80,7 +80,7 @@ export class AuthController {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HoverLens - Sign In</title>
+  <title>HoverExplain - Sign In</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -178,7 +178,7 @@ export class AuthController {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HoverLens - Success</title>
+  <title>HoverExplain - Success</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -225,7 +225,7 @@ export class AuthController {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HoverLens - Signed Out</title>
+  <title>HoverExplain - Signed Out</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -272,7 +272,7 @@ export class AuthController {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HoverLens - Error</title>
+  <title>HoverExplain - Error</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

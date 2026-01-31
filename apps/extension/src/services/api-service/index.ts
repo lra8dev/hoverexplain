@@ -1,4 +1,4 @@
-import type { SummaryResponse } from "@hoverlens/validators";
+import type { SummaryResponse } from "@hoverexplain/validators";
 
 import type { AuthManager } from "../auth-manager";
 

@@ -1,5 +1,5 @@
-import type { SummaryResponse } from "@hoverlens/validators";
-import type { CancellationToken, HoverProvider, Position, TextDocument } from "vscode";
+import type { SummaryResponse } from "@hoverexplain/validators";
+import type { CancellationToken,HoverProvider,  Position, TextDocument } from "vscode";
 
 import { Hover, MarkdownString } from "vscode";
 
@@ -8,7 +8,7 @@ import type { ApiService } from "../../services/api-service";
 import { CodeExtractor } from "../../utils/code-extractor";
 import { getLineText } from "../../utils/document-linetext";
 
-export class HoverLensProvider implements HoverProvider {
+export class HoverExplainProvider implements HoverProvider {
   private apiService: ApiService;
   private static readonly DEBOUNCE_MS = 600;
   public isEnabled: boolean = true;
@@ -33,7 +33,7 @@ export class HoverLensProvider implements HoverProvider {
       return null;
     }
 
-    await new Promise(resolve => setTimeout(resolve, HoverLensProvider.DEBOUNCE_MS));
+    await new Promise(resolve => setTimeout(resolve, HoverExplainProvider.DEBOUNCE_MS));
 
     if (token.isCancellationRequested) {
       return null;
@@ -43,7 +43,7 @@ export class HoverLensProvider implements HoverProvider {
 
     const summaryData = await this.apiService.getSummary(code, context, document.languageId);
 
-    const markdown = HoverLensProvider.getMarkdownSummary(summaryData);
+    const markdown = HoverExplainProvider.getMarkdownSummary(summaryData);
 
     return new Hover(markdown, range);
   }
@@ -52,14 +52,14 @@ export class HoverLensProvider implements HoverProvider {
     const markdown = new MarkdownString();
 
     if (!data) {
-      markdown.appendMarkdown("**HoverLens:** [Sign in](command:hoverlens.signin) to view summary.");
+      markdown.appendMarkdown("**HoverExplain:** [Sign in](command:hoverexplain.signin) to view summary.");
       return markdown;
     }
 
     markdown.isTrusted = true;
     markdown.supportHtml = true;
 
-    markdown.appendMarkdown("### HoverLens\n\n");
+    markdown.appendMarkdown("### HoverExplain\n\n");
     markdown.appendMarkdown(`${data.summary}\n\n`);
     markdown.appendMarkdown(`---\n`);
     return markdown;

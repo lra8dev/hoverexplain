@@ -1,23 +1,23 @@
-# HoverLens
+# HoverExplain
 
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/luckyra8od.hoverlens?style=flat-square&color=2563eb)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverlens)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/luckyra8od.hoverlens?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverlens)
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/luckyra8od.hoverexplain?style=flat-square&color=2563eb)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/luckyra8od.hoverexplain?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain)
 
 > Instant code understanding, right under your cursor.
 
-HoverLens helps you understand unfamiliar or forgotten code without breaking focus.\
+HoverExplain helps you understand unfamiliar or forgotten code without breaking focus.\
 Just hover — get a short, human-readable explanation of what the code actually does.
 
 Powered by AI, optimized for speed, and designed for real-world codebases.
 
-![summary-demo](./apps/extension/assets/hoverlens-toggle-on-get-summary.gif)
+![summary-demo](./apps/extension/assets/hoverexplain-summary-demo.gif)
 
-## 🤔 Why HoverLens?
+## 🤔 Why HoverExplain?
 
 Modern codebases are complex.\
 Even clean code needs context.
 
-HoverLens helps you:
+HoverExplain helps you:
 
 - Understand unfamiliar code instantly
 - Refresh logic you wrote weeks ago
@@ -37,12 +37,12 @@ No context switching. No noise. Just clarity.
 - **Secure Authentication**\
   Auth handled via **Clerk** with usage tracking and rate limiting.
 - **Focus Mode Toggle**\
-  Pause or resume HoverLens anytime from the Status Bar.
+  Pause or resume HoverExplain anytime from the Status Bar.
 
 ## 🧠 How it works (short & simple)
 
 1. You hover over a symbol in code
-2. HoverLens extracts only the relevant context
+2. HoverExplain extracts only the relevant context
 3. AI generates a concise explanation
 4. Result is cached for future hovers
 
@@ -82,8 +82,8 @@ Your code privacy matters.
 ## 💻 Development
 
 ```bash
-git clone https://github.com/lra8dev/hoverlens.git
-cd hoverlens
+git clone https://github.com/lra8dev/hoverexplain.git
+cd hoverexplain
 pnpm install
 pnpm dev
 ```

@@ -1,4 +1,4 @@
-import type { SummaryRequest } from "@hoverlens/validators";
+import type { SummaryRequest } from "@hoverexplain/validators";
 
 import { ApiError as GenAiError, GoogleGenAI } from "@google/genai";
 

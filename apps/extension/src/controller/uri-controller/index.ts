@@ -1,12 +1,12 @@
 import type * as vscode from "vscode";
 
-import { authTokenSchema } from "@hoverlens/validators";
+import { authTokenSchema } from "@hoverexplain/validators";
 
 import type { AuthManager } from "../../services/auth-manager";
 
 import { showToast } from "../../utils/toast";
 
-export class HoverLensUriHandler implements vscode.UriHandler {
+export class HoverExplainUriHandler implements vscode.UriHandler {
   private authManager: AuthManager;
 
   constructor(authManager: AuthManager) {
