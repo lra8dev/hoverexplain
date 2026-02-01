@@ -3,7 +3,7 @@ import type { SummaryResponse } from "@hoverexplain/validators";
 import type { AuthManager } from "../auth-manager";
 
 import { config } from "../../config";
-import { showToast } from "../../utils/toast";
+import { Toast } from "../../utils/toast";
 
 export class ApiService {
   private authManager: AuthManager;
@@ -21,7 +21,7 @@ export class ApiService {
     const token = await this.authManager.getToken();
 
     if (!token) {
-      showToast("Authentication token is missing. Please log in.", { isError: true });
+      Toast.error("Authentication token is missing. Please log in.");
       return null;
     }
 
@@ -39,7 +39,7 @@ export class ApiService {
         const errorBody = await response.json().catch(() => null) as { message?: string } | null;
         const errorMessage = errorBody?.message || response.statusText;
         console.error("API Error:", errorMessage);
-        showToast(errorMessage, { isError: true });
+        Toast.error(errorMessage);
         return null;
       }
 
@@ -48,7 +48,7 @@ export class ApiService {
     }
     catch (error) {
       console.error("Fetch Error:", error);
-      showToast("Network error while fetching summary.", { isError: true });
+      Toast.error("Network error while fetching summary.");
       return null;
     }
   }

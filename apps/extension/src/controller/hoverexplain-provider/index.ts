@@ -11,7 +11,7 @@ import { getLineText } from "../../utils/document-linetext";
 export class HoverExplainProvider implements HoverProvider {
   private apiService: ApiService;
   private static readonly DEBOUNCE_MS = 600;
-  public isEnabled: boolean = true;
+  public isEnabled: boolean = false;
 
   constructor(apiService: ApiService) {
     this.apiService = apiService;

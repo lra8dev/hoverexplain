@@ -7,7 +7,7 @@ No docs. No tabs. No context switching.
 
 Built for developers who value focus, speed, and clarity.
 
-![summary-demo](./assets/hoverexplain-summary-demo.gif)
+![summary-demo](https://github.com/lra8dev/hoverexplain/blob/main/apps/extension/assets/hoverexplain-summary-demo.gif)
 
 ## 🚀 How to use
 

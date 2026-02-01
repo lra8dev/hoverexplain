@@ -9,7 +9,7 @@ import morgan from "morgan";
 
 import { config } from "@/config/env-variable";
 import { logger } from "@/lib/logger";
-import { errorHandler, isAuthenticated, rateLimiter } from "@/middlewares";
+import { errorHandler, isAuthenticated } from "@/middlewares";
 import { authRouter, summaryRouter } from "@/routes";
 
 class HoverExplainApp {
@@ -74,7 +74,7 @@ class HoverExplainApp {
     this.app.use(clerkMiddleware());
 
     this.app.use("/api/auth", authRouter);
-    this.app.use("/api/ai-code", isAuthenticated, rateLimiter, summaryRouter);
+    this.app.use("/api/ai-code", isAuthenticated, summaryRouter);
 
     this.app.use((req, res) => {
       res.status(404).json({ message: "API route not found", path: req.originalUrl });

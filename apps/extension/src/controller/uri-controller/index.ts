@@ -1,31 +1,19 @@
-import type * as vscode from "vscode";
-
-import { authTokenSchema } from "@hoverexplain/validators";
+import type { Uri, UriHandler } from "vscode";
 
 import type { AuthManager } from "../../services/auth-manager";
 
-import { showToast } from "../../utils/toast";
-
-export class HoverExplainUriHandler implements vscode.UriHandler {
+export class HoverExplainUriHandler implements UriHandler {
   private authManager: AuthManager;
 
   constructor(authManager: AuthManager) {
     this.authManager = authManager;
   }
 
-  handleUri(uri: vscode.Uri): void {
+  async handleUri(uri: Uri): Promise<void> {
     if (uri.path === "/auth") {
       const query = new URLSearchParams(uri.query);
       const token = query.get("token");
-
-      const { success, data } = authTokenSchema.safeParse({ token });
-
-      if (success && data.token) {
-        this.authManager.setToken(data.token);
-      }
-      else {
-        showToast("Login failed (No token received).", { isError: true });
-      }
+      await this.authManager.setToken(token);
     }
   }
 }

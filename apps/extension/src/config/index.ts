@@ -1,6 +1,6 @@
 export const config = {
-  X_PUBLISHER: "luckyra8od",
-  X_IDENTIFIER: "hoverexplain",
+  X_PUBLISHER: "luckyra8od" as const,
+  X_IDENTIFIER: "hoverexplain" as const,
   // Development
   // SERVER_API_URL: "http://localhost:5000",
 

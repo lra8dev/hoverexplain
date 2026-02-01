@@ -12,7 +12,7 @@ import { updateStatusBar } from "./utils/status-bar";
 let statusBarItem: StatusBarItem;
 
 export function activate(context: ExtensionContext) {
-  const authManager = new AuthManager(context);
+  const authManager = new AuthManager(context.secrets);
   const apiService = new ApiService(authManager);
   const hoverProvider = new HoverExplainProvider(apiService);
 
@@ -35,7 +35,7 @@ export function activate(context: ExtensionContext) {
     window.registerUriHandler(new HoverExplainUriHandler(authManager)),
   );
 
-  updateStatusBar(hoverProvider.isEnabled, statusBarItem);
+  updateStatusBar(hoverProvider.isEnabled, statusBarItem, false);
 }
 
 export function deactivate() {}

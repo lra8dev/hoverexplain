@@ -1,5 +1,36 @@
 # HoverExplain Changelog
 
+## Version 1.3.0 — February 1, 2026
+
+### ⚡ Performance
+
+- Refactored rate limiter into a singleton pattern with lazy initialization for improved memory efficiency.
+- Added performance timing logs to track summary generation duration.
+- Extracted cache TTL into a static constant for better maintainability.
+
+### 🔧 Improved
+
+- Refactored `Toast` utility from function to class-based API with `info`, `warn`, and `error` methods.
+- Enhanced `AuthManager` with token expiration handling (30-day validity).
+- Improved URI handler with async/await pattern and cleaner token validation.
+- Better type safety with `as const` assertions in config values.
+- Configurable rate limit tokens and window via environment variables.
+- Improved env schema with `z.preprocess` for better PORT validation.
+
+### 🐛 Bug Fixes
+
+- Fixed status bar notification appearing on initial load (now silent by default).
+- Fixed hover provider starting as enabled instead of disabled.
+- Improved error messages for authentication and rate limiting.
+- Fixed README demo gif URL to use absolute GitHub path.
+
+### 📦 Dependencies
+
+- Updated `@clerk/express` to v1.7.67.
+- Updated `@google/genai` to v1.39.0.
+
+---
+
 ## Version 1.2.0 — January 31, 2026
 
 ### Added
@@ -24,6 +55,8 @@ pnpm dlx @vscode/vsce package --no-dependencies
 Notes
 
 - No breaking changes in this release. We recommend reloading or restarting VS Code after updating.
+
+---
 
 ## Version 1.1.0 — January 30, 2026
 
