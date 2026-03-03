@@ -37,6 +37,5 @@ catalogs:
     '@types/jsonwebtoken': ^9.0.10
     '@types/morgan': ^1.9.10
     '@types/node': ^25.0.3
-    '@types/vscode': ^1.109.0
 
 cleanupUnusedCatalogs: true

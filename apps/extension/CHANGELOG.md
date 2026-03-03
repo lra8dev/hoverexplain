@@ -20,7 +20,7 @@
 - Updated `@upstash/redis` to v1.36.3
 - Updated `esbuild` to v0.27.3, `dotenv` to v17.3.1, `zod` to v4.3.6
 - Bumped eslint plugins to latest compatible versions
-- Added `@types/vscode` and `eslint-plugin-format` to workspace catalogs
+- Added `eslint-plugin-format` to workspace catalogs
 
 ---
 

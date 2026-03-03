@@ -92,7 +92,7 @@
   "devDependencies": {
     "@hoverexplain/eslint-config": "workspace:*",
     "@types/node": "catalog:types",
-    "@types/vscode": "catalog:types",
+    "@types/vscode": "^1.108.1",
     "esbuild": "catalog:tooling",
     "eslint": "catalog:tooling",
     "typescript": "catalog:core"
