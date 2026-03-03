@@ -1,12 +1,12 @@
 {
   "name": "@hoverexplain/eslint-config",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "devDependencies": {
-    "@antfu/eslint-config": "^6.7.3",
-    "eslint-plugin-format": "^1.2.0"
+    "@antfu/eslint-config": "catalog:tooling",
+    "eslint-plugin-format": "catalog:tooling"
   },
   "peerDependencies": {
     "eslint": "catalog:tooling"

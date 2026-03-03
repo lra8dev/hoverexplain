@@ -1,6 +1,6 @@
 {
   "name": "@hoverexplain/root",
-  "version": "1.4.0",
+  "version": "1.5.1",
   "private": true,
   "scripts": {
     "dev": "pnpm -r --parallel dev",

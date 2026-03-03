@@ -38,7 +38,6 @@ export class ApiService {
       if (!response.ok) {
         const errorBody = await response.json().catch(() => null) as { message?: string } | null;
         const errorMessage = errorBody?.message || response.statusText;
-        console.error("API Error:", errorMessage);
         Toast.error(errorMessage);
         return null;
       }
@@ -46,8 +45,7 @@ export class ApiService {
       const responseBody = await response.json() as { data: SummaryResponse };
       return responseBody.data;
     }
-    catch (error) {
-      console.error("Fetch Error:", error);
+    catch {
       Toast.error("Network error while fetching summary.");
       return null;
     }

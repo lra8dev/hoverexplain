@@ -23,5 +23,6 @@ export enum Symbol {
   ArrowFun = "=>",
   Asterisk = "*",
   ForwSlashAster = "/*",
+  AsterForwSlash = "*/",
   DoubleForwSlash = "//",
 }

@@ -16,6 +16,8 @@ export function createConfig(options = {}, ...userConfigs) {
         semi: true,
         quotes: "double",
       },
+      gitignore: true,
+      ignores: ["dist", "node_modules"],
       ...options,
     },
     {
@@ -26,18 +28,22 @@ export function createConfig(options = {}, ...userConfigs) {
         "node/prefer-global/process": ["off"],
         "node/no-process-env": ["error"],
         "perfectionist/sort-imports": [
-          "error",
-          {
-            tsconfigRootDir: ".",
+          "error", {
+            tsconfig: { rootDir: "./" },
           },
         ],
         "unicorn/filename-case": [
           "error",
           {
             case: "kebabCase",
-            ignore: ["dist", "node_modules"],
           },
         ],
+      },
+    },
+    {
+      files: ["**/*.md/**", "**/*.md"],
+      rules: {
+        "perfectionist/sort-imports": "off",
       },
     },
     ...userConfigs

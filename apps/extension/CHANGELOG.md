@@ -1,5 +1,29 @@
 # HoverExplain Changelog
 
+## Version 1.5.1 — March 3, 2026
+
+### 🆕 Added
+
+- **Selection Support**: Users can now highlight a specific block of code and hover over it to get a targeted explanation, bypassing the auto-extractor limits.
+- **Enhanced Readme**: Completely overhauled Marketplace and GitHub README files to better highlight privacy, usage, and the new selection feature.
+
+### 🔧 Improved
+- **Extraction Fallbacks**: Adjusted the Code Extractor to gracefully fall back and extract selections seamlessly.
+- **ESLint Config**: Adjusted the ESLint configuration to prevent linting on unnecessary files.
+
+### 📦 Dependencies
+
+- Upgraded `@antfu/eslint-config` to v7.6.1 (major)
+- Upgraded `eslint-plugin-format` to v2.0.1 (major)
+- Updated `@google/genai` to v1.43.0
+- Updated `@clerk/express` to v1.7.76
+- Updated `@upstash/redis` to v1.36.3
+- Updated `esbuild` to v0.27.3, `dotenv` to v17.3.1, `zod` to v4.3.6
+- Bumped eslint plugins to latest compatible versions
+- Added `@types/vscode` and `eslint-plugin-format` to workspace catalogs
+
+---
+
 ## Version 1.4.0 — February 3, 2026
 
 ### 🔧 Improved

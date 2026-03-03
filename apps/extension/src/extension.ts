@@ -3,7 +3,7 @@ import type { ExtensionContext, StatusBarItem } from "vscode";
 import { commands, languages, StatusBarAlignment, window } from "vscode";
 
 import { selector } from "./constants";
-import { HoverExplainProvider } from "./controller/hoverexplain-provider";
+import { HoverExplainProvider } from "./controller/hover-provider";
 import { HoverExplainUriHandler } from "./controller/uri-controller";
 import { ApiService } from "./services/api-service";
 import { AuthManager } from "./services/auth-manager";

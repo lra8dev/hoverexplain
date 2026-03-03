@@ -11,16 +11,16 @@ Built for developers who value focus, speed, and clarity.
 
 ## 🚀 How to use
 
-1. Install HoverExplain from the Marketplace
+1. **Install** HoverExplain from the Marketplace
 2. Run **HoverExplain: Sign In**
-3. Authenticate in your browser
-4. Hover over any symbol in code ✨
+3. **Authenticate** in your browser
+4. **Hover** over any symbol, or **highlight code** and hover over the selection. ✨
 
 ## ✨ What you get
 
 - Clean, short explanations
 - Context-aware summaries (not full files)
-- Lightning-fast cached responses
+- Lightning-fast cached responses (`<50ms`)
 - Toggle on/off anytime
 - Privacy-first design
 
@@ -38,5 +38,4 @@ Built for developers who value focus, speed, and clarity.
 
 ## ✊ Languages
 
-TypeScript, JavaScript, Java, C/C++, C#, Go\
-_More coming soon._
+TypeScript, JavaScript, Java, C/C++, C#, Go

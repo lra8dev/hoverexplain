@@ -2,7 +2,7 @@
   "publisher": "luckyra8od",
   "name": "hoverexplain",
   "displayName": "HoverExplain",
-  "version": "1.4.0",
+  "version": "1.5.1",
   "description": "Instant code understanding, right under your cursor.",
   "license": "MIT",
   "galleryBanner": {
@@ -83,8 +83,8 @@
     "typecheck:watch": "tsc -watch -p ./",
     "package": "pnpm run check:types && pnpm run lint && node esbuild.js --production",
     "check:types": "tsc --noEmit",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "@hoverexplain/validators": "workspace:*"
@@ -92,7 +92,7 @@
   "devDependencies": {
     "@hoverexplain/eslint-config": "workspace:*",
     "@types/node": "catalog:types",
-    "@types/vscode": "^1.108.1",
+    "@types/vscode": "catalog:types",
     "esbuild": "catalog:tooling",
     "eslint": "catalog:tooling",
     "typescript": "catalog:core"

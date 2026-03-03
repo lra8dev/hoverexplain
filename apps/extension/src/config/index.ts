@@ -5,5 +5,5 @@ export const config = {
   // SERVER_API_URL: "http://localhost:5000",
 
   // Production
-  SERVER_API_URL: "https://hoverexplain-poduction.up.railway.app",
+  SERVER_API_URL: "https://hoverexplain-production.up.railway.app",
 };

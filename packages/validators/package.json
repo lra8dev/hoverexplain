@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc",
     "check:types": "tsc --noEmit",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "zod": "catalog:core"

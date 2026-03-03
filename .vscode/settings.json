@@ -33,5 +33,11 @@
     "json",
     "jsonc",
     "yaml" 
+  ],
+
+  // Enable ESLint in monorepo subdirectories
+  "eslint.workingDirectories": [
+    { "pattern": "apps/*" },
+    { "pattern": "packages/*" }
   ]
 }

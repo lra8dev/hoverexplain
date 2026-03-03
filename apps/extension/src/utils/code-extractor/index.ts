@@ -33,11 +33,11 @@ export class CodeExtractor {
       };
     }
 
-    const truncatedEnd = this.findLineAtValidCount(
+    const truncatedEnd = this.findNextLineAtValidCount(
       document,
       startLineIndex,
-      this.BLOCK_LIMIT,
       endLineIndex,
+      this.BLOCK_LIMIT,
     );
 
     const codeRange = new Range(
@@ -47,16 +47,14 @@ export class CodeExtractor {
       getLineText(document, truncatedEnd).length,
     );
 
-    const contextStart = this.findLineAtValidCountBackward(
+    const contextStart = this.findPreviousLineAtValidCount(
       document,
       startLineIndex - 1,
-      this.CONTEXT_PADDING,
       0,
     );
-    const contextEnd = this.findLineAtValidCount(
+    const contextEnd = this.findNextLineAtValidCount(
       document,
       endLineIndex + 1,
-      this.CONTEXT_PADDING,
       document.lineCount - 1,
     );
 
@@ -84,16 +82,14 @@ export class CodeExtractor {
   }
 
   private static handleLineExtraction(document: TextDocument, lineIndex: number): ExtractionResult {
-    const start = this.findLineAtValidCountBackward(
+    const start = this.findPreviousLineAtValidCount(
       document,
       lineIndex - 1,
-      this.CONTEXT_PADDING,
       0,
     );
-    const end = this.findLineAtValidCount(
+    const end = this.findNextLineAtValidCount(
       document,
       lineIndex + 1,
-      this.CONTEXT_PADDING,
       document.lineCount - 1,
     );
 
@@ -133,15 +129,20 @@ export class CodeExtractor {
   }
 
   public static isValidCodeLine(line: string): boolean {
+    line = line.trim();
+
     if (line.length === 0) {
       return false;
     };
     if (line.startsWith(Symbol.DoubleForwSlash)) {
       return false;
     };
-    if (line.startsWith(Symbol.ForwSlashAster) || line.startsWith(Symbol.Asterisk)) {
+    if (line.startsWith(Symbol.ForwSlashAster) || line.endsWith(Symbol.AsterForwSlash)) {
       return false;
     };
+    if (line.startsWith(Symbol.Asterisk)) {
+      return false;
+    }
     return true;
   }
 
@@ -155,36 +156,36 @@ export class CodeExtractor {
     return count;
   }
 
-  private static findLineAtValidCount(
+  public static findNextLineAtValidCount(
     document: TextDocument,
     startLine: number,
-    limit: number,
     maxLine: number,
+    limit?: number,
   ): number {
     let validCount = 0;
     for (let i = startLine; i <= maxLine; i++) {
       if (this.isValidCodeLine(getLineText(document, i))) {
         validCount++;
       }
-      if (validCount >= limit) {
+      if (validCount >= (limit ?? this.CONTEXT_PADDING)) {
         return i;
       }
     }
     return maxLine;
   }
 
-  private static findLineAtValidCountBackward(
+  public static findPreviousLineAtValidCount(
     document: TextDocument,
     startLine: number,
-    limit: number,
     minLine: number,
+    limit?: number,
   ): number {
     let validCount = 0;
     for (let i = startLine; i >= minLine; i--) {
       if (this.isValidCodeLine(getLineText(document, i))) {
         validCount++;
       }
-      if (validCount >= limit) {
+      if (validCount >= (limit ?? this.CONTEXT_PADDING)) {
         return i;
       }
     }
